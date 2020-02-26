@@ -1,0 +1,25 @@
+ManifestFileVersion: 0
+CRC: 2153665361
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: 0.ab
+      Dependencies: {}
+    Info_1:
+      Name: 1.ab
+      Dependencies: {}
+    Info_2:
+      Name: 2.ab
+      Dependencies: {}
+    Info_3:
+      Name: 3.ab
+      Dependencies:
+        Dependency_0: 0.ab
+    Info_4:
+      Name: scene/test.ab
+      Dependencies:
+        Dependency_0: 1.ab
+    Info_5:
+      Name: scene/test2.ab
+      Dependencies:
+        Dependency_0: 2.ab
