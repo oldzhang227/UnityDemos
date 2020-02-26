@@ -85,7 +85,10 @@ public class Test : MonoBehaviour {
         {
             if(objList.Count > 0)
             {
-                objList[0].DestroyUsePool(true);
+                if(objList[0] != null)
+                {
+                    objList[0].DestroyUsePool(true);
+                }
                 objList.RemoveAt(0);
             }
         }

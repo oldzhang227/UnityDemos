@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 1921380022
+CRC: 1993871933
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 22971425e7b4bb0bb35aea9eb57be85c
+    Hash: d1671ddf7608b3bda21940b6a4eea33b
   TypeTreeHash:
     serializedVersion: 2
-    Hash: aadc35b35ec3e14770ea14d8fb0ca649
+    Hash: f218451350c532aba06596be001d308c
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -34,7 +34,7 @@ ClassTypes:
 - Class: 213
   Script: {instanceID: 0}
 Assets:
-- Assets/Resources/0/image.57x57.png
+- Assets/Resources/0/icon.png
 - Assets/Resources/0/Cube.prefab
 - Assets/Resources/0/testMat.mat
 Dependencies: []

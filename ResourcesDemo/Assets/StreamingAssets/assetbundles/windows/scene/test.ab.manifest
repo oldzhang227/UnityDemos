@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 2014177009
+CRC: 131345845
 Hashes:
   AssetFileHash:
     serializedVersion: 2
     Hash: 0e112772a3a97479acb9147a0238098e
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 195d98ba5a9bf888627139696e2c3db8
+    Hash: 1e77673307b907d2c63335b5e5a482fd
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -30,15 +30,15 @@ ClassTypes:
 - Class: 108
   Script: {instanceID: 0}
 - Class: 114
-  Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-- Class: 114
   Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 - Class: 114
   Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 - Class: 114
   Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 - Class: 114
-  Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 157
@@ -56,4 +56,4 @@ ClassTypes:
 Assets:
 - Assets/Resources/scene/test.unity
 Dependencies:
-- E:/StudyDemo/ABUnloadTest/Assets/StreamingAssets/assetbundles/windows/1.ab
+- E:/UnityDemos/ResourcesDemo/Assets/StreamingAssets/assetbundles/windows/1.ab

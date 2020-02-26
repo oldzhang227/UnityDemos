@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 2510446708
+CRC: 2082133562
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 76166daa9f4e41a48142da3d6b6c1c0e
+    Hash: 49ec5f8f7ed4b6e52d9eb23d5709b241
   TypeTreeHash:
     serializedVersion: 2
-    Hash: ea5a42e0fd8ea905efa7aa926a3b8944
+    Hash: 460b4f5d62b6facbccf7c01637df8f00
 HashAppended: 0
 ClassTypes:
 - Class: 28
@@ -14,5 +14,5 @@ ClassTypes:
 - Class: 213
   Script: {instanceID: 0}
 Assets:
-- Assets/Resources/2/icon.png
+- Assets/Resources/2/app_banner.png
 Dependencies: []

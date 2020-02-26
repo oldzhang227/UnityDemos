@@ -1,5 +1,5 @@
 ManifestFileVersion: 0
-CRC: 2153665361
+CRC: 3581150481
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
@@ -14,7 +14,7 @@ AssetBundleManifest:
     Info_3:
       Name: 3.ab
       Dependencies:
-        Dependency_0: 0.ab
+        Dependency_0: 2.ab
     Info_4:
       Name: scene/test.ab
       Dependencies:
@@ -22,4 +22,4 @@ AssetBundleManifest:
     Info_5:
       Name: scene/test2.ab
       Dependencies:
-        Dependency_0: 2.ab
+        Dependency_0: 3.ab
