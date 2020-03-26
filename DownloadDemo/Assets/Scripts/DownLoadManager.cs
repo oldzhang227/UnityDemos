@@ -77,7 +77,7 @@ public class DownLoadManager: MonoBehaviour
 
     private void OnDestroy()
     {
-        StopThread(true);
+        StopThread(false);
     }
 
     private void Update()
@@ -105,7 +105,7 @@ public class DownLoadManager: MonoBehaviour
         _needStop = true;
         Clear();
         Resume();
-        if(waitForEnd)
+        if(waitForEnd && _workThread.IsAlive)
         {
             _workThread.Join();
         }
@@ -293,9 +293,9 @@ public class DownLoadManager: MonoBehaviour
     /// <summary>
     /// 恢复失败任务
     /// </summary>
-    private void ResumeFailedList()
+    private void ResumeFailedList(bool force = false)
     {
-        if(!_isContinue || !_isFailed)
+        if(!force && (!_isContinue || !_isFailed))
         {
             return;
         }
@@ -381,6 +381,7 @@ public class DownLoadManager: MonoBehaviour
             lock (_object)
             {
                 ResumeFailedList();
+                long lastDoneSize = _downDoneSize;
                 bool isWorkDoing = IsWorkDoing();
                 bool isWorkFailed = IsWorkFailed();
                 bool isWorkWait = IsWorkWait();
@@ -392,10 +393,18 @@ public class DownLoadManager: MonoBehaviour
                 {
                     if (isWorkFailed)
                     {
-                        if (!isWorkDoing)
+                        // 如果有新成功的任务，则恢复失败的任务
+                        if(_downDoneSize > lastDoneSize)
                         {
-                            isPause = true;
-                            isFailed = true;
+                            ResumeFailedList(true);
+                        }
+                        else
+                        {
+                            if (!isWorkDoing)
+                            {
+                                isPause = true;
+                                isFailed = true;
+                            }
                         }
                     }
                     else if (isWorkWait)
@@ -540,12 +549,13 @@ public class DownLoadManager: MonoBehaviour
                 System.Net.WebException webException = ex as WebException;
                 if(webException != null && webException.Status == WebExceptionStatus.Timeout && webException.TargetSite.Name == "Read")
                 {
-                    timeOut = true;
+                    //timeOut = true;
                 }
                 else
                 {
                     timeOut = false;
                 }
+                Debug.LogError(ex.StackTrace);
                 Debug.LogError(ex.Message);
                 if (responseStream != null)
                 {
@@ -604,8 +614,28 @@ public class DownLoadManager: MonoBehaviour
         request.AllowAutoRedirect = true;
         request.Timeout = HTTP_TIMEOUT;
         request.Method = "GET";
-        //request.KeepAlive = true;
+        request.CachePolicy = new System.Net.Cache.RequestCachePolicy(System.Net.Cache.RequestCacheLevel.NoCacheNoStore);
+        request.KeepAlive = true;
+        request.CookieContainer = null;
+        request.UseDefaultCredentials = true;
         request.ServicePoint.ConnectionLimit = 512;
+        
+        /*
+        IPAddress[] ips = Dns.GetHostAddresses("woda.jijiagames.com");
+        if (ips != null)
+        {
+            request.Proxy = new WebProxy("http://" + ips[0].ToString());
+            for (int i = 0; i < ips.Length; ++i)
+            {
+                Debug.Log("ip:" + ips[i].ToString());
+            }
+        }
+        else
+        {
+            Debug.LogError("GetHostAddresses Failed!");
+        }
+        */
+
         return request;
     }
 
