@@ -15,3 +15,7 @@ Android下系统版本在AndoridP以下的分不同的手机厂商获取刘海�
 4：GifDecodeDemo：Gif格式的图片转为Texture2D
 
 接入腾讯相关组件时，会有显示QQ头像的需求，有部分QQ头像为Gif格式的，Texture2D.LoadImage无法解析，只能手动解析完像素数据再创建Texture2D
+
+5：BuildLibraryDemo：C++多平台编译库工程
+
+将C++代码编译为各个平台的库文件，在Unity中调用
