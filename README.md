@@ -19,3 +19,9 @@ Android下系统版本在AndoridP以下的分不同的手机厂商获取刘海�
 5：BuildLibraryDemo：C++多平台编译库工程
 
 将C++代码编译为各个平台的库文件，在Unity中调用
+
+6：SkinAnimDemo：蒙皮动画的演示demo
+尝试用cpu来实现蒙皮动画
+
+7：InjectFixDemo：Injectfix热修复C#的演示demo
+定义了良好的热修复工作流
